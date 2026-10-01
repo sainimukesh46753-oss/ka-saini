@@ -1,0 +1,4 @@
+"use client";
+import Link from "next/link";
+import {useCart} from "./store-shell";
+export default function ProductCard({product}:any){const{add}=useCart();return <article className="card"><Link href={"/products/"+product.id} style={{textDecoration:"none",color:"inherit"}}><div className="pic">{product.image_url?<img src={product.image_url} alt={product.name}/>:product.emoji}</div><div className="card-body"><div className="rating">★★★★★ <span>4.6</span></div><h3>{product.name}</h3><span className="price">₹{product.price.toLocaleString("en-IN")}</span>{product.old_price&&<span className="old">₹{product.old_price.toLocaleString("en-IN")}</span>}</div></Link><div className="card-body" style={{paddingTop:0}}><button className="add" onClick={()=>add(product)}>Add to Cart</button></div></article>}
