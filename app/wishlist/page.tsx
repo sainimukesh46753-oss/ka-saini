@@ -1,0 +1,1 @@
+"use client";import {useState} from "react";export default function Wishlist(){const[items]=useState(["❤️ Premium Everyday Sneakers","❤️ Smart Watch Pro"]);return <main className="container"><h1>My Wishlist</h1><div className="empty"><h2>{items.length} saved items</h2><p>Wishlist syncing with your account will be connected with Supabase.</p></div></main>}
