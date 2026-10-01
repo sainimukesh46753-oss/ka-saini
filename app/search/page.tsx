@@ -1,0 +1,2 @@
+import {redirect} from "next/navigation";
+export default async function Search({searchParams}:{searchParams:Promise<{q?:string}>}){const p=await searchParams;redirect("/products"+(p.q?"?q="+encodeURIComponent(p.q):""));}
